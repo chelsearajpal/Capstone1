@@ -1,0 +1,30 @@
+import random
+import time
+
+
+def generate_gps_coordinates():
+    
+    latitude = round(random.uniform(-90, 90), 6)
+    
+    
+    longitude = round(random.uniform(-180, 180), 6)
+    
+    return latitude, longitude
+
+
+def simulate_gps_sensor(device_id, interval_seconds):
+    while True:
+        latitude, longitude = generate_gps_coordinates()
+        
+        
+        print(f"Device ID: {device_id}, Latitude: {latitude}, Longitude: {longitude}")
+        
+        
+        time.sleep(interval_seconds)
+
+if __name__ == "__main__":
+    
+    device_id = "device001"
+    interval_seconds = 5  
+    
+    simulate_gps_sensor(device_id, interval_seconds)
